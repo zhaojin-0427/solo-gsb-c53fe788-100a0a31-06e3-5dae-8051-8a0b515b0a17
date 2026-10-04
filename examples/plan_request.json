@@ -1,0 +1,33 @@
+{
+  "deadline": 12,
+  "memory_limit": 4096,
+  "paths": [
+    {
+      "id": "chat",
+      "operators": [
+        {"id": "embed", "duration": 2, "dependencies": []},
+        {"id": "attn", "duration": 3, "dependencies": ["embed"]},
+        {"id": "head", "duration": 2, "dependencies": ["attn"]}
+      ],
+      "tensors": [
+        {"id": "weights", "bytes": 1024, "alignment": 256, "producer": null, "consumers": ["attn"]},
+        {"id": "hidden", "bytes": 512, "alignment": 256, "producer": "embed", "consumers": ["attn"]},
+        {"id": "kv", "bytes": 768, "alignment": 256, "producer": "attn", "consumers": ["head"]},
+        {"id": "kv_tail", "bytes": 256, "alignment": 256, "base": "kv", "offset": 512, "producer": "attn", "consumers": ["head"]},
+        {"id": "logits", "bytes": 512, "alignment": 256, "producer": "head", "consumers": [], "is_output": true}
+      ]
+    },
+    {
+      "id": "embed_only",
+      "operators": [
+        {"id": "embed", "duration": 2, "dependencies": []},
+        {"id": "proj", "duration": 2, "dependencies": ["embed"]}
+      ],
+      "tensors": [
+        {"id": "weights", "bytes": 1024, "alignment": 256, "producer": null, "consumers": ["proj"]},
+        {"id": "hidden", "bytes": 512, "alignment": 256, "producer": "embed", "consumers": ["proj"]},
+        {"id": "vec", "bytes": 256, "alignment": 256, "producer": "proj", "consumers": [], "is_output": true}
+      ]
+    }
+  ]
+}

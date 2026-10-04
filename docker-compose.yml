@@ -1,0 +1,15 @@
+services:
+  planner:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # Per-solve and total solver time budgets (seconds).
+      PLANNER_SOLVE_SECONDS: "5"
+      PLANNER_TOTAL_SECONDS: "60"
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

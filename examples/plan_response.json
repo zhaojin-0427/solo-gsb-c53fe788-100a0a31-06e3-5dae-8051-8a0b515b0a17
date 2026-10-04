@@ -1,0 +1,83 @@
+{
+    "status": "optimal",
+    "address_bound": 1536,
+    "paths": [
+        {
+            "id": "chat",
+            "start": 0,
+            "end": 7,
+            "peak": 1536,
+            "operators": [
+                {
+                    "id": "attn",
+                    "start": 2,
+                    "end": 5
+                },
+                {
+                    "id": "embed",
+                    "start": 0,
+                    "end": 2
+                },
+                {
+                    "id": "head",
+                    "start": 5,
+                    "end": 7
+                }
+            ],
+            "tensors": [
+                {
+                    "id": "hidden",
+                    "address": 0
+                },
+                {
+                    "id": "kv",
+                    "address": 0
+                },
+                {
+                    "id": "kv_tail",
+                    "address": 512
+                },
+                {
+                    "id": "logits",
+                    "address": 0
+                },
+                {
+                    "id": "weights",
+                    "address": 512
+                }
+            ]
+        },
+        {
+            "id": "embed_only",
+            "start": 0,
+            "end": 4,
+            "peak": 1536,
+            "operators": [
+                {
+                    "id": "embed",
+                    "start": 0,
+                    "end": 2
+                },
+                {
+                    "id": "proj",
+                    "start": 2,
+                    "end": 4
+                }
+            ],
+            "tensors": [
+                {
+                    "id": "hidden",
+                    "address": 0
+                },
+                {
+                    "id": "vec",
+                    "address": 0
+                },
+                {
+                    "id": "weights",
+                    "address": 512
+                }
+            ]
+        }
+    ]
+}
