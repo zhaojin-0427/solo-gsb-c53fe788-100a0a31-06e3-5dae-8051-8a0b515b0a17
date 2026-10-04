@@ -1,0 +1,1010 @@
+{
+  "deadline": 200,
+  "memory_limit": 4096,
+  "paths": [
+    {
+      "id": "P0",
+      "operators": [
+        {
+          "id": "o0",
+          "duration": 5
+        },
+        {
+          "id": "o1",
+          "duration": 1
+        },
+        {
+          "id": "o2",
+          "duration": 2,
+          "depends_on": [
+            "o1"
+          ]
+        },
+        {
+          "id": "o3",
+          "duration": 4,
+          "depends_on": [
+            "o2"
+          ]
+        },
+        {
+          "id": "o4",
+          "duration": 2,
+          "depends_on": [
+            "o3"
+          ]
+        },
+        {
+          "id": "o5",
+          "duration": 4,
+          "depends_on": [
+            "o4"
+          ]
+        },
+        {
+          "id": "o6",
+          "duration": 5,
+          "depends_on": [
+            "o5"
+          ]
+        },
+        {
+          "id": "o7",
+          "duration": 2,
+          "depends_on": [
+            "o6"
+          ]
+        },
+        {
+          "id": "o8",
+          "duration": 5
+        },
+        {
+          "id": "o9",
+          "duration": 5,
+          "depends_on": [
+            "o8"
+          ]
+        },
+        {
+          "id": "o10",
+          "duration": 1
+        },
+        {
+          "id": "o11",
+          "duration": 1,
+          "depends_on": [
+            "o10"
+          ]
+        }
+      ],
+      "tensors": [
+        {
+          "id": "P0_t6",
+          "bytes": 32,
+          "alignment": 64,
+          "producer": "o2",
+          "consumers": [],
+          "output": false
+        },
+        {
+          "id": "P0_t7",
+          "bytes": 8,
+          "alignment": 32,
+          "producer": "o8",
+          "consumers": [
+            "o11",
+            "o9"
+          ],
+          "output": false
+        },
+        {
+          "id": "P0_t8",
+          "bytes": 128,
+          "alignment": 16,
+          "producer": "o1",
+          "consumers": [
+            "o3"
+          ],
+          "output": false
+        },
+        {
+          "id": "P0_t9",
+          "bytes": 256,
+          "alignment": 8,
+          "producer": "o8",
+          "consumers": [
+            "o9",
+            "o11"
+          ],
+          "output": false
+        },
+        {
+          "id": "P0_t10",
+          "bytes": 256,
+          "alignment": 64,
+          "producer": "o7",
+          "consumers": [
+            "o11"
+          ],
+          "output": false
+        },
+        {
+          "id": "P0_t11",
+          "bytes": 64,
+          "alignment": 32,
+          "producer": "o9",
+          "consumers": [
+            "o10"
+          ],
+          "output": true
+        },
+        {
+          "id": "P0_t12",
+          "bytes": 256,
+          "alignment": 16,
+          "producer": "o2",
+          "consumers": [],
+          "output": false
+        },
+        {
+          "id": "P0_t13",
+          "bytes": 32,
+          "alignment": 64,
+          "producer": "o9",
+          "consumers": [
+            "o11"
+          ],
+          "output": false
+        },
+        {
+          "id": "P0_t14",
+          "bytes": 128,
+          "alignment": 8,
+          "producer": "o4",
+          "consumers": [],
+          "output": false
+        },
+        {
+          "id": "P0_t15",
+          "bytes": 64,
+          "alignment": 16,
+          "producer": "o8",
+          "consumers": [
+            "o9"
+          ],
+          "output": false
+        },
+        {
+          "id": "P0_t16",
+          "bytes": 64,
+          "alignment": 8,
+          "producer": "o7",
+          "consumers": [
+            "o8",
+            "o10"
+          ],
+          "output": false
+        },
+        {
+          "id": "P0_t17",
+          "bytes": 32,
+          "alignment": 32,
+          "producer": "o9",
+          "consumers": [
+            "o11",
+            "o10"
+          ],
+          "output": true
+        },
+        {
+          "id": "P0_t18",
+          "bytes": 128,
+          "alignment": 16,
+          "producer": "o9",
+          "consumers": [],
+          "output": false,
+          "base_tensor": "P0_t8",
+          "view_offset": 0
+        },
+        {
+          "id": "P0_t19",
+          "bytes": 64,
+          "alignment": 8,
+          "producer": "o4",
+          "consumers": [],
+          "output": false
+        },
+        {
+          "id": "sh0",
+          "bytes": 64,
+          "alignment": 8,
+          "producer": "o4",
+          "consumers": [
+            "o10"
+          ]
+        },
+        {
+          "id": "sh1",
+          "bytes": 128,
+          "alignment": 32,
+          "producer": "o9",
+          "consumers": [
+            "o11"
+          ]
+        },
+        {
+          "id": "sh2",
+          "bytes": 16,
+          "alignment": 8,
+          "producer": "o4",
+          "consumers": [
+            "o10"
+          ]
+        },
+        {
+          "id": "sh3",
+          "bytes": 16,
+          "alignment": 16,
+          "producer": "o6",
+          "consumers": [
+            "o9"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P1",
+      "operators": [
+        {
+          "id": "o0",
+          "duration": 5
+        },
+        {
+          "id": "o1",
+          "duration": 1,
+          "depends_on": [
+            "o0"
+          ]
+        },
+        {
+          "id": "o2",
+          "duration": 2
+        },
+        {
+          "id": "o3",
+          "duration": 2
+        },
+        {
+          "id": "o4",
+          "duration": 4,
+          "depends_on": [
+            "o3"
+          ]
+        },
+        {
+          "id": "o5",
+          "duration": 4,
+          "depends_on": [
+            "o4"
+          ]
+        },
+        {
+          "id": "o6",
+          "duration": 4,
+          "depends_on": [
+            "o5"
+          ]
+        },
+        {
+          "id": "o7",
+          "duration": 3
+        },
+        {
+          "id": "o8",
+          "duration": 4
+        },
+        {
+          "id": "o9",
+          "duration": 3
+        },
+        {
+          "id": "o10",
+          "duration": 3,
+          "depends_on": [
+            "o9"
+          ]
+        },
+        {
+          "id": "o11",
+          "duration": 4
+        }
+      ],
+      "tensors": [
+        {
+          "id": "P1_t6",
+          "bytes": 8,
+          "alignment": 16,
+          "producer": "o2",
+          "consumers": [],
+          "output": false
+        },
+        {
+          "id": "P1_t7",
+          "bytes": 256,
+          "alignment": 16,
+          "producer": "o3",
+          "consumers": [],
+          "output": false
+        },
+        {
+          "id": "P1_t8",
+          "bytes": 128,
+          "alignment": 16,
+          "producer": "o7",
+          "consumers": [
+            "o10"
+          ],
+          "output": false
+        },
+        {
+          "id": "P1_t9",
+          "bytes": 16,
+          "alignment": 64,
+          "producer": "o0",
+          "consumers": [
+            "o6",
+            "o10"
+          ],
+          "output": false
+        },
+        {
+          "id": "P1_t10",
+          "bytes": 32,
+          "alignment": 16,
+          "producer": "o9",
+          "consumers": [
+            "o10",
+            "o11"
+          ],
+          "output": false
+        },
+        {
+          "id": "P1_t11",
+          "bytes": 128,
+          "alignment": 64,
+          "producer": "o10",
+          "consumers": [
+            "o11"
+          ],
+          "output": true
+        },
+        {
+          "id": "P1_t12",
+          "bytes": 8,
+          "alignment": 64,
+          "producer": "o6",
+          "consumers": [
+            "o10",
+            "o7"
+          ],
+          "output": false
+        },
+        {
+          "id": "P1_t13",
+          "bytes": 8,
+          "alignment": 16,
+          "producer": "o3",
+          "consumers": [
+            "o6"
+          ],
+          "output": false
+        },
+        {
+          "id": "P1_t14",
+          "bytes": 32,
+          "alignment": 8,
+          "producer": "o1",
+          "consumers": [],
+          "output": false
+        },
+        {
+          "id": "P1_t15",
+          "bytes": 128,
+          "alignment": 16,
+          "producer": "o0",
+          "consumers": [
+            "o2",
+            "o6"
+          ],
+          "output": false
+        },
+        {
+          "id": "P1_t16",
+          "bytes": 8,
+          "alignment": 16,
+          "producer": "o9",
+          "consumers": [],
+          "output": false,
+          "base_tensor": "P1_t6",
+          "view_offset": 0
+        },
+        {
+          "id": "P1_t17",
+          "bytes": 256,
+          "alignment": 16,
+          "producer": "o9",
+          "consumers": [
+            "o11",
+            "o10"
+          ],
+          "output": true,
+          "base_tensor": "P1_t7",
+          "view_offset": 0
+        },
+        {
+          "id": "P1_t18",
+          "bytes": 128,
+          "alignment": 16,
+          "producer": "o9",
+          "consumers": [],
+          "output": false,
+          "base_tensor": "P1_t8",
+          "view_offset": 0
+        },
+        {
+          "id": "P1_t19",
+          "bytes": 64,
+          "alignment": 64,
+          "producer": "o1",
+          "consumers": [
+            "o9"
+          ],
+          "output": false
+        },
+        {
+          "id": "sh0",
+          "bytes": 64,
+          "alignment": 8,
+          "producer": "o4",
+          "consumers": [
+            "o5"
+          ]
+        },
+        {
+          "id": "sh1",
+          "bytes": 128,
+          "alignment": 32,
+          "producer": "o2",
+          "consumers": [
+            "o4"
+          ]
+        },
+        {
+          "id": "sh2",
+          "bytes": 16,
+          "alignment": 8,
+          "producer": "o5",
+          "consumers": [
+            "o11"
+          ]
+        },
+        {
+          "id": "sh3",
+          "bytes": 16,
+          "alignment": 16,
+          "producer": "o4",
+          "consumers": [
+            "o8"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "operators": [
+        {
+          "id": "o0",
+          "duration": 5
+        },
+        {
+          "id": "o1",
+          "duration": 3,
+          "depends_on": [
+            "o0"
+          ]
+        },
+        {
+          "id": "o2",
+          "duration": 5
+        },
+        {
+          "id": "o3",
+          "duration": 5,
+          "depends_on": [
+            "o2"
+          ]
+        },
+        {
+          "id": "o4",
+          "duration": 1,
+          "depends_on": [
+            "o3"
+          ]
+        },
+        {
+          "id": "o5",
+          "duration": 3,
+          "depends_on": [
+            "o4"
+          ]
+        },
+        {
+          "id": "o6",
+          "duration": 2,
+          "depends_on": [
+            "o5"
+          ]
+        },
+        {
+          "id": "o7",
+          "duration": 2,
+          "depends_on": [
+            "o6"
+          ]
+        },
+        {
+          "id": "o8",
+          "duration": 5,
+          "depends_on": [
+            "o7"
+          ]
+        },
+        {
+          "id": "o9",
+          "duration": 2,
+          "depends_on": [
+            "o8"
+          ]
+        },
+        {
+          "id": "o10",
+          "duration": 2
+        },
+        {
+          "id": "o11",
+          "duration": 4
+        }
+      ],
+      "tensors": [
+        {
+          "id": "P2_t6",
+          "bytes": 16,
+          "alignment": 64,
+          "producer": "o3",
+          "consumers": [
+            "o4"
+          ],
+          "output": false
+        },
+        {
+          "id": "P2_t7",
+          "bytes": 32,
+          "alignment": 64,
+          "producer": "o0",
+          "consumers": [
+            "o4"
+          ],
+          "output": false
+        },
+        {
+          "id": "P2_t8",
+          "bytes": 32,
+          "alignment": 64,
+          "producer": "o9",
+          "consumers": [
+            "o11",
+            "o10"
+          ],
+          "output": false
+        },
+        {
+          "id": "P2_t9",
+          "bytes": 16,
+          "alignment": 8,
+          "producer": "o1",
+          "consumers": [],
+          "output": false
+        },
+        {
+          "id": "P2_t10",
+          "bytes": 16,
+          "alignment": 32,
+          "producer": "o7",
+          "consumers": [],
+          "output": false
+        },
+        {
+          "id": "P2_t11",
+          "bytes": 128,
+          "alignment": 8,
+          "producer": "o7",
+          "consumers": [
+            "o10"
+          ],
+          "output": true
+        },
+        {
+          "id": "P2_t12",
+          "bytes": 8,
+          "alignment": 8,
+          "producer": "o10",
+          "consumers": [
+            "o11"
+          ],
+          "output": false
+        },
+        {
+          "id": "P2_t13",
+          "bytes": 16,
+          "alignment": 64,
+          "producer": "o7",
+          "consumers": [
+            "o10",
+            "o8"
+          ],
+          "output": false
+        },
+        {
+          "id": "P2_t14",
+          "bytes": 64,
+          "alignment": 64,
+          "producer": "o6",
+          "consumers": [
+            "o7",
+            "o8"
+          ],
+          "output": false
+        },
+        {
+          "id": "P2_t15",
+          "bytes": 16,
+          "alignment": 8,
+          "producer": "o2",
+          "consumers": [],
+          "output": false
+        },
+        {
+          "id": "P2_t16",
+          "bytes": 64,
+          "alignment": 16,
+          "producer": "o9",
+          "consumers": [
+            "o11",
+            "o10"
+          ],
+          "output": false
+        },
+        {
+          "id": "P2_t17",
+          "bytes": 128,
+          "alignment": 16,
+          "producer": "o2",
+          "consumers": [],
+          "output": true
+        },
+        {
+          "id": "P2_t18",
+          "bytes": 256,
+          "alignment": 8,
+          "producer": "o0",
+          "consumers": [
+            "o3",
+            "o7"
+          ],
+          "output": false
+        },
+        {
+          "id": "P2_t19",
+          "bytes": 16,
+          "alignment": 8,
+          "producer": "o3",
+          "consumers": [
+            "o7"
+          ],
+          "output": false,
+          "base_tensor": "P2_t9",
+          "view_offset": 0
+        },
+        {
+          "id": "sh0",
+          "bytes": 64,
+          "alignment": 8,
+          "producer": "o4",
+          "consumers": [
+            "o9"
+          ]
+        },
+        {
+          "id": "sh1",
+          "bytes": 128,
+          "alignment": 32,
+          "producer": "o3",
+          "consumers": [
+            "o9"
+          ]
+        },
+        {
+          "id": "sh2",
+          "bytes": 16,
+          "alignment": 8,
+          "producer": "o4",
+          "consumers": [
+            "o9"
+          ]
+        },
+        {
+          "id": "sh3",
+          "bytes": 16,
+          "alignment": 16,
+          "producer": "o6",
+          "consumers": [
+            "o8"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P3",
+      "operators": [
+        {
+          "id": "o0",
+          "duration": 5
+        },
+        {
+          "id": "o1",
+          "duration": 2,
+          "depends_on": [
+            "o0"
+          ]
+        },
+        {
+          "id": "o2",
+          "duration": 5,
+          "depends_on": [
+            "o1"
+          ]
+        },
+        {
+          "id": "o3",
+          "duration": 4
+        },
+        {
+          "id": "o4",
+          "duration": 5,
+          "depends_on": [
+            "o3"
+          ]
+        },
+        {
+          "id": "o5",
+          "duration": 2,
+          "depends_on": [
+            "o4"
+          ]
+        },
+        {
+          "id": "o6",
+          "duration": 4,
+          "depends_on": [
+            "o5"
+          ]
+        },
+        {
+          "id": "o7",
+          "duration": 1,
+          "depends_on": [
+            "o6"
+          ]
+        },
+        {
+          "id": "o8",
+          "duration": 3,
+          "depends_on": [
+            "o7"
+          ]
+        },
+        {
+          "id": "o9",
+          "duration": 5,
+          "depends_on": [
+            "o8"
+          ]
+        },
+        {
+          "id": "o10",
+          "duration": 1
+        },
+        {
+          "id": "o11",
+          "duration": 1,
+          "depends_on": [
+            "o10"
+          ]
+        }
+      ],
+      "tensors": [
+        {
+          "id": "P3_t6",
+          "bytes": 8,
+          "alignment": 8,
+          "producer": "o4",
+          "consumers": [
+            "o8",
+            "o9"
+          ],
+          "output": false
+        },
+        {
+          "id": "P3_t7",
+          "bytes": 8,
+          "alignment": 64,
+          "producer": "o0",
+          "consumers": [
+            "o10"
+          ],
+          "output": false
+        },
+        {
+          "id": "P3_t8",
+          "bytes": 128,
+          "alignment": 16,
+          "producer": "o8",
+          "consumers": [
+            "o10",
+            "o11"
+          ],
+          "output": false
+        },
+        {
+          "id": "P3_t9",
+          "bytes": 128,
+          "alignment": 64,
+          "producer": "o8",
+          "consumers": [
+            "o9",
+            "o10"
+          ],
+          "output": false
+        },
+        {
+          "id": "P3_t10",
+          "bytes": 16,
+          "alignment": 64,
+          "producer": "o8",
+          "consumers": [],
+          "output": false
+        },
+        {
+          "id": "P3_t11",
+          "bytes": 8,
+          "alignment": 64,
+          "producer": "o6",
+          "consumers": [
+            "o9"
+          ],
+          "output": true
+        },
+        {
+          "id": "P3_t12",
+          "bytes": 256,
+          "alignment": 16,
+          "producer": "o1",
+          "consumers": [
+            "o3"
+          ],
+          "output": false
+        },
+        {
+          "id": "P3_t13",
+          "bytes": 256,
+          "alignment": 32,
+          "producer": "o3",
+          "consumers": [],
+          "output": false
+        },
+        {
+          "id": "P3_t14",
+          "bytes": 256,
+          "alignment": 32,
+          "producer": "o2",
+          "consumers": [],
+          "output": false
+        },
+        {
+          "id": "P3_t15",
+          "bytes": 16,
+          "alignment": 64,
+          "producer": "o4",
+          "consumers": [],
+          "output": false
+        },
+        {
+          "id": "P3_t16",
+          "bytes": 64,
+          "alignment": 64,
+          "producer": "o1",
+          "consumers": [],
+          "output": false
+        },
+        {
+          "id": "P3_t17",
+          "bytes": 16,
+          "alignment": 16,
+          "producer": "o10",
+          "consumers": [
+            "o11"
+          ],
+          "output": true
+        },
+        {
+          "id": "P3_t18",
+          "bytes": 64,
+          "alignment": 32,
+          "producer": "o8",
+          "consumers": [
+            "o9"
+          ],
+          "output": false
+        },
+        {
+          "id": "P3_t19",
+          "bytes": 32,
+          "alignment": 8,
+          "producer": "o5",
+          "consumers": [
+            "o8",
+            "o6"
+          ],
+          "output": false
+        },
+        {
+          "id": "sh0",
+          "bytes": 64,
+          "alignment": 8,
+          "producer": "o5",
+          "consumers": [
+            "o10"
+          ]
+        },
+        {
+          "id": "sh1",
+          "bytes": 128,
+          "alignment": 32,
+          "producer": "o7",
+          "consumers": [
+            "o11"
+          ]
+        },
+        {
+          "id": "sh2",
+          "bytes": 16,
+          "alignment": 8,
+          "producer": "o0",
+          "consumers": [
+            "o7"
+          ]
+        },
+        {
+          "id": "sh3",
+          "bytes": 16,
+          "alignment": 16,
+          "producer": "o5",
+          "consumers": [
+            "o10"
+          ]
+        }
+      ]
+    }
+  ]
+}

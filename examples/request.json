@@ -1,0 +1,30 @@
+{
+  "deadline": 12,
+  "memory_limit": 128,
+  "paths": [
+    {
+      "id": "P1",
+      "operators": [
+        {"id": "a", "duration": 2},
+        {"id": "b", "duration": 3, "depends_on": ["a"]}
+      ],
+      "tensors": [
+        {"id": "w", "bytes": 32, "alignment": 32, "producer": "a", "consumers": ["b"]},
+        {"id": "x", "bytes": 32, "alignment": 16, "producer": "a", "output": true}
+      ]
+    },
+    {
+      "id": "P2",
+      "operators": [
+        {"id": "c", "duration": 4},
+        {"id": "d", "duration": 3, "depends_on": ["c"]}
+      ],
+      "tensors": [
+        {"id": "w", "bytes": 32, "alignment": 32, "producer": "c", "consumers": ["d"]},
+        {"id": "y", "bytes": 64, "alignment": 64, "producer": "c", "consumers": ["d"]},
+        {"id": "yv", "bytes": 16, "alignment": 16, "producer": "d", "output": true,
+         "base_tensor": "y", "view_offset": 16}
+      ]
+    }
+  ]
+}
